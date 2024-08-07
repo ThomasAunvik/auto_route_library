@@ -59,7 +59,7 @@ class RouteMatcher {
                     config.redirectTo,
                     match.pathParams.rawMap,
                   ),
-              ).path),
+              ).path,
             ),
             redirectedFrom: PageRouteInfo.expandPath(
               config.path,
