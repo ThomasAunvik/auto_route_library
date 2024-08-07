@@ -53,11 +53,13 @@ class RouteMatcher {
           return _handleRedirect(
             routesCollection: collection,
             includePrefixMatches: includePrefixMatches,
-            redirectTo: Uri.parse(
-              PageRouteInfo.expandPath(
-                config.redirectTo,
-                match.pathParams.rawMap,
-              ),
+            redirectTo: uri.replace(
+                path: Uri.parse(
+                  PageRouteInfo.expandPath(
+                    config.redirectTo,
+                    match.pathParams.rawMap,
+                  ),
+              ).path),
             ),
             redirectedFrom: PageRouteInfo.expandPath(
               config.path,
